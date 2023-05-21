@@ -1,0 +1,17 @@
+<app-my-loader></app-my-loader>
+
+
+<div id="main_content">
+    <app-rightsidebar *ngIf="false || (AuthenticationModule | async)"></app-rightsidebar>
+
+    <app-navigationmenu  *ngIf="false || (AuthenticationModule | async)"></app-navigationmenu>
+    <app-leftsidebar  *ngIf="false || (AuthenticationModule | async)"></app-leftsidebar>
+    <div class="page">
+        
+        <app-header  *ngIf="false || (AuthenticationModule | async)"></app-header>
+        <router-outlet></router-outlet>
+        <app-footer  *ngIf="false || (AuthenticationModule | async)"></app-footer>
+    </div>
+    <!-- Start project content area -->
+
+</div>

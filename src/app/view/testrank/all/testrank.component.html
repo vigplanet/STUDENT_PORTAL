@@ -1,0 +1,79 @@
+         
+        <!-- Start Page title and tab -->
+        <div class="section-body">
+            <div class="container-fluid">
+                <div class="d-flex justify-content-between align-items-center ">
+                    <div class="header-action">
+                        <!--<h1 class="page-title">Result Declared</h1>-->
+                        <!--<ol class="breadcrumb page-breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Page Empty</li>
+                        </ol>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section-body mt-4">
+            <div class="container-fluid">
+                <h4>All Given Exam List and Details</h4>
+                 
+
+                <div class="row clearfix row-deck">
+                    <div class="col-xl-12 col-lg-12 col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Exam Summarry</h3>
+                                <div class="card-options">
+                                    <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
+                                    <div class="item-action dropdown ml-2">
+                                        <a href="javascript:void(0)" data-toggle="dropdown"><i class="fe fe-more-vertical"></i></a>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-eye"></i> View Details </a>
+                                            <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-share-alt"></i> Share </a>
+                                            <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-cloud-download"></i> Download</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table card-table table-vcenter text-nowrap table-striped mb-0">
+                                    <tbody>
+                                        <tr>
+                                            
+                                            <th>Sr.No.</th>
+                                            <th>Exam</th>
+                                            <th>Rank</th>
+                                                <th>Out Of Rank</th>
+                                                    <th>Total Marks</th>
+                                                        <th>Questions</th>
+                                                            <th>Attend</th>
+                                                            <th>Right Ans</th>
+                                                                            <th>Wrong</th>
+                                                                            <th>Show</th>
+                                        </tr>
+                                        <tr *ngFor="let results of ExamList">
+                                            <td [textContent]="results.srNo"></td> 
+                                            <td [textContent]="results.surveyName"></td> 
+                                            <td [textContent]="results.actualRank"></td> 
+                                            <td [textContent]="results.outofRank"></td> 
+                                            <td [textContent]="results.totalMarks"></td> 
+                                            <td [textContent]="results.totalQuestion"></td> 
+                                            <td [textContent]="results.totalAttend"></td> 
+                                            <td [textContent]="results.righans"></td> 
+                                            <td [textContent]="results.wrong"></td>  
+                                            <td>
+                                                <a class="btn btn-primary btn-block"  (click)="ShowDetails(results?.surveyid)">Show</a>
+                                            </td>  
+                                        </tr>                                 
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                
+            </div>
+        </div>

@@ -1,0 +1,149 @@
+         
+        <!-- Start Page title and tab -->
+        <div class="section-body">
+            <div class="container-fluid">
+                <div class="d-flex justify-content-between align-items-center ">
+                    <div class="header-action">
+                        <!--<h1 class="page-title">Result Declared</h1>-->
+                        <!--<ol class="breadcrumb page-breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Page Empty</li>
+                        </ol>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section-body mt-4">
+            <div class="container-fluid">
+                <h4>Result Declared</h4>
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title" [textContent]="'Exam Name : '+Result[0].surveyName">Exam Name : SSC 2019</h3>
+                        <div class="card-options">
+                            <a href="#"><i class="fa fa-file-excel-o" data-toggle="tooltip" title="Export Excel"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <div class="row text-center">
+                            <div class="col-6 border-right">
+                                <label class="mb-0">TOTAL-QUESTIONS</label>
+                                <div class="font-20 font-weight-bold" [textContent]="Result[0].totalQuestion">1,052</div>
+                            </div>
+                            <div class="col-6">
+                                <label class="mb-0">TOTAL-ATTEND</label>
+                                <div class="font-20 font-weight-bold"  [textContent]="Result[0].totalAttend">198</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="row text-center">
+                            <div class="col-6 border-right">
+                                <label class="mb-0">TOTAL-RIGHT</label>
+                                <div class="font-20 font-weight-bold"  [textContent]="Result[0].righans">1,052</div>
+                            </div>
+                            <div class="col-6">
+                                <label class="mb-0">OBTAIN-MARK</label>
+                                <div class="font-20 font-weight-bold"  [textContent]="Result[0].totalMarks">198</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row clearfix row-deck">
+                    <div class="col-xl-12 col-lg-12 col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Exam Summarry</h3>
+                                <div class="card-options">
+                                    <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
+                                    <div class="item-action dropdown ml-2">
+                                        <a href="javascript:void(0)" data-toggle="dropdown"><i class="fe fe-more-vertical"></i></a>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-eye"></i> View Details </a>
+                                            <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-share-alt"></i> Share </a>
+                                            <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-cloud-download"></i> Download</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table card-table table-vcenter text-nowrap table-striped mb-0">
+                                    <tbody>
+                                        <tr>
+                                            
+                                            <th>Total Question</th>
+                                            <th>Total Marks</th>
+                                            <th>Answered Q.</th>
+                                            <th>Right Q.</th>
+                                            <th> Wrong Q.  </th>
+                                            <th> Correct Marks    </th>
+                                            <th>Wrong Mark</th>
+                                        </tr>
+                                        <tr *ngFor="let result of Result">
+                                            <td [textContent]="result.totalQuestion"></td>
+                                            <td [textContent]="result.totalMarks"></td>
+                                            <td [textContent]="result.totalAttend"></td>
+                                            <td [textContent]="result.righans">11</td>
+                                            <td [textContent]="result.wrong">199</td>
+                                            <td [textContent]="result.righans">99.00</td>
+                                            <td [textContent]="result.totalMarks">99.00</td>
+                                        </tr>                                 
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row clearfix row-deck">
+                    <div class="col-xl-12 col-lg-12 col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Exam Toppers</h3>
+                                <div class="card-options">
+                                    <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
+                                    <div class="item-action dropdown ml-2">
+                                        <a href="javascript:void(0)" data-toggle="dropdown"><i class="fe fe-more-vertical"></i></a>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-eye"></i> View Details </a>
+                                            <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-share-alt"></i> Share </a>
+                                            <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-cloud-download"></i> Download</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table card-table table-vcenter text-nowrap table-striped mb-0">
+                                    <tbody>
+                                        <tr>
+                                            <th>S.No.</th>
+                                            <th>Rank</th>
+                                            <th>MemberName</th>
+                                            <th>Total-Questions</th>
+                                            <th>Total-Attend</th>
+                                            <th>Total-Right</th>
+                                            <th>Obtain-Marks</th>
+                                        </tr>
+                                        <tr *ngFor="let topper of ResultTopper">
+                                            <td [textContent]="topper.srNo"></td>
+                                            <td [textContent]="topper.actualRank"></td>
+                                            <td [textContent]="topper.memberName"></td>
+                                            <td [textContent]="topper.totalQuestion">11</td>
+                                            <td [textContent]="topper.totalAttend">199</td>
+                                            <td [textContent]="topper.righans">99.00</td>
+                                            <td [textContent]="topper.totalMarks">99.00</td>
+                                        </tr>
+
+                                    
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>

@@ -1,0 +1,49 @@
+<div class="auth option2">
+    <div class="auth_left">
+        <div class="card">
+            <div class="card-body">
+                <form [formGroup]="form">
+                <div class="text-center">
+                    <a class="header-brand" href="index.html"><i class="fa fa-graduation-cap brand-logo"></i></a>
+                    <div class="card-title mt-3">Login to your account</div>
+                    <button type="button" class="btn btn-facebook me-2"><i class="fa fa-facebook me-2"></i>Facebook</button>
+                    <button type="button" class="btn btn-google"><i class="fa fa-google me-2"></i>Google</button>
+                    <h6 class="mt-3 mb-3">Or</h6>
+                </div>
+                
+                <div class="form-group mb-3">
+                    <input type="text" class="form-control" id="Username" aria-describedby="emailHelp" placeholder="Enter UserName"
+                    formControlName="username"
+                    class="form-control"
+                    [ngClass]="{ 'is-invalid': loginform.username.errors }"
+                  />
+                  <div *ngIf="loginform.username.errors" class="invalid-feedback">
+                    <div *ngIf="loginform.username.errors.required">Username is required</div>                  
+                  </div>
+                </div>
+                <div class="form-group mb-3">
+                    <label class="form-label text-end"><a href="forgot-password.html" class="float-right small">I forgot password</a></label>
+                    <input type="password" class="form-control" id="password" placeholder="Password" formControlName="password"
+                    class="form-control"
+                    [ngClass]="{ 'is-invalid': loginform.password.errors }"
+                  />
+                  <div *ngIf="loginform.password.errors" class="invalid-feedback">
+                    <div *ngIf="loginform.password.errors.required">Password is required</div>                  
+                  </div>
+                </div>
+                <div class="form-group">
+                    <label class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input me-2" />
+                    <span class="custom-control-label">Remember me</span>
+                    </label>
+                </div>
+                <div class="text-center">
+                    <a  class="btn btn-primary btn-block w-100 mt-3" title="" (click)="login()">Sign in</a>
+                    <div class="text-muted mt-4">Don't have account yet? <a href="register.html">Sign up</a></div>
+                </div>
+                </form>
+            </div>
+        </div>        
+    </div>
+</div>
+

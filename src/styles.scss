@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+
+a {
+    text-decoration: none !important;
+}
+.page_auth .page {
+    transition: all 0.5s ease-in-out;
+    flex: 1 1 auto;
+    width: calc(100%);
+    position: static;
+    background: #fff;
+}
+
+
+    .close_rightbar .page {
+        width: calc(100% - 0px)!important;
+        padding-top: 0px;
+    }

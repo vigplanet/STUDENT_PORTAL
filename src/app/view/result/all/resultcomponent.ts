@@ -1,0 +1,61 @@
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ApiService } from 'src/app/service/api.service';
+import { NotificationService } from 'src/app/service/notification.service';
+
+@Component({
+  selector: 'app-student-result',
+  templateUrl: './result.component.html',
+  styleUrls: ['./result.component.scss']
+})
+export class ResultComponent implements OnInit {
+  public Result:Array<any>=[];
+  public ResultTopper:Array<any>=[];
+  
+  constructor(private route: ActivatedRoute,private router:Router,private apiService:ApiService,private notificationService:NotificationService) { }
+
+  ngOnInit(): void {
+    console.log('ccccc');
+   this.getResult();
+   this.getResultTopper();
+  }
+  
+  getResult(){
+    const req={
+      "action": "view",
+      "surveyid": this.route.snapshot.queryParams.surveyid || 0
+    };
+     this.apiService.getStudentSurveyResult(req).subscribe({next:(data:any)=>{
+      if (data && data.results && data.results.status == "Success") {
+       this.Result= data.results.survey_exam_rank_model_list;
+       console.warn(this.Result);
+      } else {
+        this.notificationService.error('error_', 'Some Error Occur');
+      }
+    }, error:err => {
+      this.notificationService.error('error_', 'error_occured_try_again');
+    },
+    complete:() => {
+      // Do stuff after completion
+    }});
+  }
+
+getResultTopper(){
+  const req={
+    "action": "view",    
+    "surveyid": this.route.snapshot.queryParams.surveyid || 0
+  };
+   this.apiService.getStudentSurveyToppers(req).subscribe({next:(data:any)=>{
+    if (data && data.results && data.results.status == "Success") {
+     this.ResultTopper= data.results.survey_exam_rank_model_list;
+    } else {
+      this.notificationService.error('error_', 'Some Error Occur');
+    }
+  }, error:err => {
+    this.notificationService.error('error_', 'error_occured_try_again');
+  },
+  complete:() => {
+    // Do stuff after completion
+  }});
+}
+}

@@ -1,0 +1,42 @@
+<div class="section-body mt-4">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                
+                 
+                 
+                <div class="tab-content mt-3">
+
+                    <div role="tabpanel" class="tab-pane vivify fadeIn active" id="All" aria-expanded="false">
+                        <div class="card" *ngFor="let coruse of VideoList">
+                            <div class="card-body">
+                                <article class="media">
+                                    <div class="mr-3">
+                                        <img class="w150" src="../assets/images/gallery/playbutton.png" alt="">
+                                    </div>
+                                    <div class="media-body">
+                                        <div class="content">
+                                            <p class="h5" [innerHtml]="coruse.title">John Smith   <small class="float-right text-muted" [innerHtml]="coruse.dateOn">31 minutes ago</small></p>
+                                            <p [innerHtml]="coruse.description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.</p>
+
+                                            <a class="btn btn-primary btn-block"  (click)="ShowDetails(coruse?.videoid)">Play video</a>
+                                        </div>
+                                        <!-- <nav class="d-flex text-muted">
+                                            <a href="#" class="icon mr-3"><i class="fe fe-repeat"></i></a>
+                                            <a href="#" class="icon mr-3"><i class="fe fe-twitter"></i> 24</a>
+                                            <a href="#" class="icon mr-3"><i class="fe fe-heart"></i> 43</a>
+                                            <a href="" class="text-muted ml-auto">5 notes</a>
+                                        </nav> -->
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                         
+                        
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
